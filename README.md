@@ -102,16 +102,16 @@
 
 | Авторизация | Регистрация |
 |-------------|-------------|
-| ![Авторизация](docs/screenshots/Авторизация.png) | ![Регистрация](docs/screenshots/Регистрация.png) |
+| ![Авторизация](docs/screenshots/auth_window.png) | ![Регистрация](docs/screenshots/reg.png) |
 
 ---
 
 ### Панель управления
 Главное окно для навигации по разделам системы.
 
-![Панель управления](docs/screenshots/Главное меню.png)
+![Панель управления](docs/screenshots/main.png)
 
-![Выбор разделов БД](docs/screenshots/Просмотр таблиц.png)
+![Выбор разделов БД](docs/screenshots/tables.png)
 
 ---
 
@@ -120,4 +120,4 @@
 
 | Регистрация ТС | Регистрация клиента | Регистрация операции |
 |----------------|---------------------|----------------------|
-| ![Регистрация ТС](docs/screenshots/Регистрация ТС.png) | ![Регистрация клиента](docs/screenshots/Регистрация клиента.png) | ![Регистрация операции](docs/screenshots/Регистрация операции.png) |
+| ![Регистрация ТС](docs/screenshots/reg_transport.png) | ![Регистрация клиента](docs/screenshots/reg_client.png) | ![Регистрация операции](docs/screenshots/reg_operation.png) |
