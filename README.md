@@ -5,7 +5,7 @@
 [![WPF](https://img.shields.io/badge/WPF-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://docs.microsoft.com/en-us/dotnet/desktop/wpf/)
 [![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
 [![Tests](https://img.shields.io/badge/Tests-6%20passed%2C%200%20failed-brightgreen)](docs/screenshots/test_results.png)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)]
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
 
 ## Содержание
 
