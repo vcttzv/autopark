@@ -4,6 +4,7 @@
 [![.NET](https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white)](https://dotnet.microsoft.com/)
 [![WPF](https://img.shields.io/badge/WPF-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://docs.microsoft.com/en-us/dotnet/desktop/wpf/)
 [![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![Tests](https://img.shields.io/badge/Tests-6%20passed%2C%200%20failed-brightgreen)](docs/tests/test_results.png)
 
 ## О проекте
 
@@ -121,3 +122,113 @@
 | Регистрация ТС | Регистрация клиента | Регистрация операции |
 |----------------|---------------------|----------------------|
 | ![Регистрация ТС](docs/screenshots/reg_transport.png) | ![Регистрация клиента](docs/screenshots/reg_client.png) | ![Регистрация операции](docs/screenshots/reg_operation.png) |
+
+## Тестирование
+
+В проекте реализованы модульные тесты (Unit Tests) для проверки ключевой логики приложения. Тесты написаны с использованием фреймворка **MSTest** и покрывают:
+
+- ✅ Валидацию пароля (длина, наличие заглавных/строчных букв, цифр, специальных символов)
+- ✅ Проверку корректности вводимых данных
+- ✅ Граничные случаи и обработку ошибок
+
+### Пример тестового метода
+
+Ниже показан пример теста, проверяющего валидацию пароля на соответствие требованиям безопасности:
+
+```csharp
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+
+namespace ClassLibraryMetrology.UnitTestProjectMetrology
+{
+    [TestClass()]
+    public class PasswordCheckerTests
+    {
+        [TestMethod()]
+        public void CheckSymbols()
+        {
+            // Arrange
+            string password = "abcD#$";
+            bool expected = true;
+
+            // Act
+            bool actual = PasswordChecker.ValidatePassword(password);
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod()]
+        public void Check45Symbols()
+        {
+            // Arrange
+            string password = "aD45";
+
+            // Act
+            bool actual = PasswordChecker.ValidatePassword(password);
+
+            // Assert
+            Assert.IsFalse(actual);
+        }
+
+        [TestMethod()]
+        public void CheckLowerSymbols()
+        {
+            // Arrange
+            string password = "ABCD3F!$";
+            bool expected = true;
+
+            // Act
+            bool actual = PasswordChecker.ValidatePassword(password);
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod()]
+        public void CheckNoLowerSymbols()
+        {
+            // Arrange
+            string password = "ABCD3F!$";
+            bool expected = false;
+
+            // Act
+            bool actual = PasswordChecker.ValidatePassword(password);
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod()]
+        public void CheckDigits()
+        {
+            // Arrange
+            string password = "ABcD3F!$";
+            bool expected = true;
+
+            // Act
+            bool actual = PasswordChecker.ValidatePassword(password);
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod()]
+        public void CheckIntersect()
+        {
+            // Arrange
+            string password = "ABcD3F!$";
+            bool expected = true;
+
+            // Act
+            bool actual = PasswordChecker.ValidatePassword(password);
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
+    }
+}
+
+В результате тест был успешно пройден
+
+![Результат тестов](docs/screenshots/test_results.png)
