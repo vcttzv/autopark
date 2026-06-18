@@ -1,0 +1,367 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Autorark">
+    <!-- Стиль для Button Black -->
+    <Style x:Key="AccentButton" TargetType="Button">
+        <Setter Property="Control.FontSize" Value="16" />
+        <Setter Property="Control.BorderBrush" Value="#FF2C2C2C" />
+        <Setter Property="Control.Background" Value="#FF2C2C2C" />
+        <Setter Property="Control.Foreground" Value="WhiteSmoke" />
+        <Setter Property="Control.Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#FF404040"/>
+                <Setter Property="Foreground" Value="White"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Стиль для Button White -->
+    <Style x:Key="Button" TargetType="Button">
+        <Setter Property="Control.FontSize" Value="16" />
+        <Setter Property="Control.BorderBrush" Value="#FF2C2C2C" />
+        <Setter Property="Control.Background" Value="WhiteSmoke" />
+        <Setter Property="Control.Foreground" Value="#FF2C2C2C" />
+        <Setter Property="Control.Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#FFE0E0E0"/>
+                <Setter Property="Foreground" Value="#FF1A1A1A"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Стиль для TextBox -->
+    <Style x:Key="TextBox" TargetType="TextBox">
+        <Setter Property="Control.FontSize" Value="12" />
+        <Setter Property="Control.VerticalContentAlignment" Value="Center" />
+        <Setter Property="Control.Background" Value="#F5F5F5" />
+        <Setter Property="Control.Foreground" Value="#2C2C2C" />
+        <!-- Цвет вводимого текста -->
+        <Setter Property="Control.BorderBrush" Value="#D9D9D9" />
+        <Setter Property="Control.BorderThickness" Value="1" />
+        <Setter Property="Control.FontFamily" Value="Verdana" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="10">
+                        <!-- Радиус закругления -->
+                        <ScrollViewer x:Name="PART_ContentHost" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Стиль для PasswordBox -->
+    <Style x:Key="PasswordBox" TargetType="PasswordBox">
+        <Setter Property="Control.FontSize" Value="12" />
+        <Setter Property="Control.VerticalContentAlignment" Value="Center" />
+        <Setter Property="Control.Background" Value="#F5F5F5" />
+        <Setter Property="Control.Foreground" Value="#2C2C2C" />
+        <!-- Цвет вводимого текста -->
+        <Setter Property="Control.BorderBrush" Value="#D9D9D9" />
+        <Setter Property="Control.BorderThickness" Value="1" />
+        <Setter Property="Control.FontFamily" Value="Verdana" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="PasswordBox">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="10">
+                        <!-- Радиус закругления -->
+                        <ScrollViewer x:Name="PART_ContentHost" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="RoundedTextBoxStyle" TargetType="TextBox">
+        <Setter Property="Control.FontSize" Value="16" />
+        <Setter Property="Control.Background" Value="#F5F5F5" />
+        <Setter Property="Control.Foreground" Value="#2C2C2C" />
+        <!-- Цвет вводимого текста -->
+        <Setter Property="Control.BorderBrush" Value="#D9D9D9" />
+        <Setter Property="Control.Margin" Value="10" />
+        <Setter Property="Control.Padding" Value="5" />
+        <Setter Property="Control.BorderThickness" Value="1" />
+        <Setter Property="Control.FontFamily" Value="Verdana" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="10">
+                        <!-- Радиус закругления -->
+                        <ScrollViewer x:Name="PART_ContentHost" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!-- стиль для вкладок таблиц -->
+
+    <Style x:Key="ActiveTab" TargetType="Button">
+        <Setter Property="Control.Width" Value="120" />
+        <Setter Property="Control.Height" Value="30" />
+        <Setter Property="Control.HorizontalAlignment" Value="Left" />
+        <Setter Property="Control.VerticalAlignment" Value="Bottom" />
+        <Setter Property="Control.Background" Value="{x:Null}" />
+        <Setter Property="Control.BorderBrush" Value="#303030" />
+        <Setter Property="Control.BorderThickness" Value="0,0,0,1" />
+        <Setter Property="Control.FontSize" Value="16" />
+        <Setter Property="Control.Cursor" Value="Hand" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{x:Null}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="InactiveTab" TargetType="Button">
+        <Setter Property="Control.Width" Value="120" />
+        <Setter Property="Control.Height" Value="30" />
+        <Setter Property="Control.HorizontalAlignment" Value="Left" />
+        <Setter Property="Control.VerticalAlignment" Value="Bottom" />
+        <Setter Property="Control.Background" Value="{x:Null}" />
+        <Setter Property="Control.BorderBrush" Value="{x:Null}" />
+        <Setter Property="Control.BorderThickness" Value="0,0,0,1" />
+        <Setter Property="Control.FontSize" Value="16" />
+        <Setter Property="Control.Foreground" Value="#767676" />
+        <Setter Property="Control.Cursor" Value="Hand" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{x:Null}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Стиль для ComboBox -->
+    <Style x:Key="ComboBox" TargetType="ComboBox">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBox">
+                    <Grid>
+                        <!-- Основной вид закрытого ComboBox -->
+                        <Border x:Name="ComboBoxBorder"
+                                    Background="#F5F5F5"
+                                    BorderBrush="#B3B3B3"
+                                    BorderThickness="1"
+                                    CornerRadius="10"
+                                    Focusable="True">
+                            <Grid>
+                                <ContentPresenter x:Name="ContentSite"
+                                                      Content="{TemplateBinding SelectionBoxItem}"
+                                                      ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                                      ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                                                      HorizontalAlignment="Left"
+                                                      VerticalAlignment="Center"
+                                                      Margin="10,0,30,0"/>
+                                <!-- Стрелка раскрытия -->
+                                <Border Width="20" Height="20" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                    <Path Data="M 0 0 L 4 4 L 8 0"
+                                              Width="8"
+                                              Height="4"
+                                              Fill="Black"
+                                              VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+                                </Border>
+                            </Grid>
+                        </Border>
+
+                        <!-- Выпадающий список -->
+                        <Popup x:Name="Popup"
+                                   IsOpen="{TemplateBinding IsDropDownOpen}"
+                                   Placement="Bottom"
+                                   PlacementTarget="{Binding ElementName=ComboBoxBorder}"
+                                   AllowsTransparency="True"
+                                   Focusable="False"
+                                   PopupAnimation="Slide">
+                            <Border x:Name="PopupBorder"
+                                        Background="White"
+                                        BorderBrush="Gray"
+                                        BorderThickness="1"
+                                        CornerRadius="4"
+                                        Width="272">
+                                <ScrollViewer x:Name="ScrollViewer"
+                                                  Margin="4"
+                                                  SnapsToDevicePixels="True">
+                                    <ItemsPresenter/>
+                                </ScrollViewer>
+                            </Border>
+                        </Popup>
+                    </Grid>
+
+                    <!-- Триггеры -->
+                    <ControlTemplate.Triggers>
+                        <!-- Триггер для неактивного состояния -->
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="ComboBoxBorder" Property="Background" Value="#FFC0C0C0"/>
+                            <Setter TargetName="ComboBoxBorder" Property="BorderBrush" Value="#FFA0A0A0"/>
+                        </Trigger>
+
+                        <!-- Триггер для состояния "мышь над элементом" -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ComboBoxBorder" Property="BorderBrush" Value="#FF008CFF"/>
+                        </Trigger>
+
+                        <!-- Триггер для раскрытия списка, когда элемент получает фокус -->
+                        <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                            <Setter Property="IsDropDownOpen" Value="True"/>
+                        </Trigger>
+
+                        <!-- Триггер для состояния раскрытого списка -->
+                        <Trigger Property="IsDropDownOpen" Value="True">
+                            <Setter TargetName="PopupBorder" Property="Background" Value="White"/>
+                            <Setter TargetName="ComboBoxBorder" Property="BorderBrush" Value="#FF008CFF"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Стиль для ComboBoxItem -->
+    <Style TargetType="ComboBoxItem">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBoxItem">
+                    <Border x:Name="ItemBorder"
+                                Background="Transparent"
+                                Padding="10,5"
+                                SnapsToDevicePixels="True">
+                        <ContentPresenter/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ItemBorder" Property="Background" Value="#FFCCE5FF"/>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="ItemBorder" Property="Background" Value="#FF008CFF"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Стиль для DatePicker -->
+    <Style x:Key="DatePicker" TargetType="DatePicker">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="DatePicker">
+                    <Grid>
+                        <!-- Внешний контейнер -->
+                        <Border x:Name="DatePickerBorder"
+                            Background="#F5F5F5"
+                            BorderBrush="#D9D9D9"
+                            BorderThickness="1"
+                            CornerRadius="10">
+                            <Grid>
+                                <!-- Поле для отображения выбранной даты -->
+                                <TextBox x:Name="PART_TextBox"
+                                     VerticalAlignment="Center"
+                                     HorizontalAlignment="Left"
+                                     Margin="10,0,30,0"
+                                     Background="Transparent"
+                                     BorderThickness="0"
+                                     Text="{Binding Path=SelectedDate, RelativeSource={RelativeSource TemplatedParent}, StringFormat=d}"
+                                     IsReadOnly="True"
+                                     Focusable="False"/>
+
+                                <!-- Кнопка для открытия календаря -->
+                                <Button x:Name="PART_Button"
+                                    Width="20"
+                                    Height="20"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Center"
+                                    Background="Transparent"
+                                    BorderBrush="{x:Null}">
+                                    <Path Data="M 0 0 L 4 4 L 8 0"
+                                      Width="8"
+                                      Height="4"
+                                      Fill="Black"
+                                      VerticalAlignment="Center"
+                                      HorizontalAlignment="Center"/>
+                                </Button>
+                            </Grid>
+                        </Border>
+
+                        <!-- Выпадающий календарь -->
+                        <Popup x:Name="PART_Popup"
+                           Placement="Bottom"
+                           PlacementTarget="{Binding ElementName=DatePickerBorder}"
+                           StaysOpen="False"
+                           AllowsTransparency="True"
+                           PopupAnimation="Slide">
+                            <Border x:Name="CalendarBorder"
+                                Background="White"
+                                BorderBrush="Gray"
+                                BorderThickness="1"
+                                CornerRadius="4">
+                                <Calendar x:Name="PART_Calendar"
+                                      Margin="4"
+                                      Background="White"
+                                      SelectedDate="{Binding Path=SelectedDate, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                                      DisplayDate="{Binding Path=DisplayDate, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"/>
+                            </Border>
+                        </Popup>
+                    </Grid>
+
+                    <!-- Триггеры -->
+                    <ControlTemplate.Triggers>
+                        <!-- Когда элемент неактивен -->
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="DatePickerBorder" Property="Background" Value="#FFC0C0C0"/>
+                            <Setter TargetName="DatePickerBorder" Property="BorderBrush" Value="#FFA0A0A0"/>
+                        </Trigger>
+
+                        <!-- Когда календарь открыт -->
+                        <Trigger SourceName="PART_Popup" Property="Popup.IsOpen" Value="True">
+                            <Setter TargetName="DatePickerBorder" Property="BorderBrush" Value="#FF008CFF"/>
+                        </Trigger>
+
+                        <!-- Закрытие календаря при выборе даты -->
+                        <Trigger SourceName="PART_Calendar" Property="Calendar.SelectedDate" Value="{x:Null}">
+                            <Setter TargetName="PART_Popup" Property="IsOpen" Value="False"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+</ResourceDictionary>

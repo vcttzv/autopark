@@ -1,0 +1,48 @@
+﻿<Window x:Class="Autorark.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Autorark"
+        mc:Ignorable="d"
+        Title="Автопарк: Главное меню" Height="614" Width="800" ResizeMode="NoResize">
+
+    <Window.Resources>
+        <ResourceDictionary Source="Styles.xaml" />
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="210"></RowDefinition>
+            <RowDefinition Height="48"></RowDefinition>
+            <RowDefinition Height="48"></RowDefinition>
+            <RowDefinition Height="48"></RowDefinition>
+            <RowDefinition Height="48"></RowDefinition>
+            <RowDefinition Height="48"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="350"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Grid.ColumnSpan="3" Background="#2C2C2C" Orientation="Horizontal" VerticalAlignment="Center">
+            <Image Source="image 1.png" Height="50" Width="50" HorizontalAlignment="Left" Margin="10,0,20,0"/>
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left">
+        <Run FontSize="24" FontWeight="DemiBold" Foreground="White">Главное меню</Run>
+            </TextBlock>
+        </StackPanel>
+        <TextBlock x:Name="welcome" Grid.ColumnSpan="3" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24"></TextBlock>
+        <Image Source="image 2.png" Height="209" Width="209" Grid.Column="1" Grid.Row="2" />
+
+        <Button x:Name="tables" Width="272" Height="36" Content="Просмотр таблиц" Grid.Column="1" Grid.Row="3" Style="{StaticResource AccentButton}" Click="Tables_Click" />
+        <Button x:Name="reg_op" Width="272" Height="36" Content="Регистрация операции" Grid.Column="1" Grid.Row="4" Style="{StaticResource Button}"  Click="Reg_op_Click" />
+        <Button x:Name="reg_ts" Width="272" Height="36" Content="Регистрация транспорта" Grid.Column="1" Grid.Row="5" Style="{StaticResource Button}" Click="Reg_ts_Click" />
+        <Button x:Name="reg_client" Width="272" Height="36" Content="Регистрация клиента" Grid.Column="1" Grid.Row="6" Style="{StaticResource Button}" Click="Reg_client_Click" />
+        <Button x:Name="out" Width="272" Height="36" Content="Выйти из учётной записи" Grid.Column="1" Grid.Row="7" Style="{StaticResource Button}" Background="#FDD3D0" Foreground="#FF2C2C2C" Click="Out_Click" />
+
+    </Grid>
+</Window>

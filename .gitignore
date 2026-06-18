@@ -1,0 +1,26 @@
+# Visual Studio
+bin/
+obj/
+*.user
+*.suo
+*.pdb
+*.cache
+*.tmp
+*.vs/
+.vs/
+
+# NuGet packages
+packages/
+*.nupkg
+
+# Database files
+*.mdf
+*.ldf
+*.sdf
+
+# Logs
+*.log
+
+# Windows
+Thumbs.db
+Desktop.ini
